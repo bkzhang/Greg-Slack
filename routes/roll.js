@@ -1,5 +1,5 @@
 const request = require('request')
-const config = require('./config.json')
+const config = require('../config.json')
 
 const token = config.ROLL_TOKEN
 

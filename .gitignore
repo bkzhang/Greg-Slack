@@ -6,3 +6,5 @@ node_modules
 Procfile
 
 config.json
+
+terminalcommands.md

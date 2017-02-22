@@ -1,8 +1,8 @@
 const app = require('express')()
 const bodyParser = require('body-parser')
 
-const bot = require('./bot')
-const roll = require('./roll')
+const greg = require('./routes/greg')
+const roll = require('./routes/roll')
 
 const port = process.env.PORT || 3000
 
@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.status(200).send('Ain\'t that just the way?')
 })
 
-app.post('/greg', bot)
+app.post('/greg', greg)
 
 app.post('/roll', roll)
 
