@@ -1,7 +1,4 @@
 const request = require('request')
-const config = require('../config.json')
-
-const token = config.ROLL_TOKEN
 
 module.exports = (req, res, next) => {
   let matches
@@ -51,7 +48,7 @@ function roll (min, max) {
 }
 
 function send (payload, callback) { 
-  let uri = 'https://hooks.slack.com/services/' + token 
+  let uri = 'https://hooks.slack.com/services/' + TOKEN 
   
   request({
     uri: uri,
