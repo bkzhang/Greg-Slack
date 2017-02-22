@@ -1,4 +1,7 @@
+'use strict'
+
 const request = require('request')
+require('dotenv').config()
 
 module.exports = (req, res, next) => {
   let matches
@@ -36,6 +39,8 @@ module.exports = (req, res, next) => {
       return next(err)
 
     } else if (status !== 200) {  
+      console.log(uri)
+      console.log(process.env.ROLL_TOKEN)
       return next(new Error('Incoming WebHook: ' + status + ' ' + body))
     } else {
       return res.status(200).end();
@@ -47,9 +52,11 @@ function roll (min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
+let uri
+
 function send (payload, callback) {  
-  let path = process.env.ROLL_TOKEN
-  let uri = 'https://hooks.slack.com/services/' + path 
+  let path = process.env.ROLL_TOKEN 
+  uri = 'https://hooks.slack.com/services/' + path 
   
   request({
     uri: uri,

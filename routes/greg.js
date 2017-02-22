@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = (req, res, next) => {
   let userName = req.body.user_name
   if (userName == 'slackbot') {

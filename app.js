@@ -1,5 +1,8 @@
+'use strict'
+
 const app = require('express')()
 const bodyParser = require('body-parser')
+require('dotenv').config()
 
 const greg = require('./routes/greg')
 const roll = require('./routes/roll')
