@@ -1,7 +1,5 @@
 const request = require('request')
 
-let path = process.env.ROLL_TOKEN
-
 module.exports = (req, res, next) => {
   let matches
   let times = 2
@@ -37,8 +35,7 @@ module.exports = (req, res, next) => {
     if (err) {
       return next(err)
 
-    } else if (status !== 200) { 
-      console.log(path)
+    } else if (status !== 200) {  
       return next(new Error('Incoming WebHook: ' + status + ' ' + body))
     } else {
       return res.status(200).end();
