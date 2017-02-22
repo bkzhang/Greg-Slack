@@ -47,8 +47,8 @@ function roll (min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-function send (payload, callback) { 
-  let uri = 'https://hooks.slack.com/services' + process.env.TOKEN 
+function send (payload, callback) {  
+  let uri = 'https://hooks.slack.com/services/' + process.env.ROLL_TOKEN 
   
   request({
     uri: uri,
