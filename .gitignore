@@ -3,8 +3,4 @@ logs
 
 node_modules
 
-Setting.py
-
-__pycache__
-
-greg
+Procfile

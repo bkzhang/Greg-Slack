@@ -1,6 +1,6 @@
 module.exports = function (req, res, next) {
   let userName = req.body.user_name
-  if (userName == 'greg') {
+  if (userName == 'slackbot') {
     return res.status(200).end
   }
   let botPayload = {
