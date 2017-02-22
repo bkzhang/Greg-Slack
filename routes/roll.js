@@ -48,7 +48,7 @@ function roll (min, max) {
 }
 
 function send (payload, callback) { 
-  let uri = 'https://hooks.slack.com/services/' + process.env.TOKEN 
+  let uri = 'https://hooks.slack.com/services' + process.env.TOKEN 
   
   request({
     uri: uri,
