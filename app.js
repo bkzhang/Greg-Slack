@@ -2,6 +2,7 @@ const app = require('express')()
 const bodyParser = require('body-parser')
 
 const bot = require('./bot')
+const roll = require('./roll')
 
 const port = process.env.PORT || 3000
 
@@ -10,10 +11,12 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.get('/', (req, res) => {
-  res.status(200).send('Hello world!')
+  res.status(200).send('Ain\'t that just the way?')
 })
 
 app.post('/greg', bot)
+
+app.post('/roll', roll)
 
 app.use((err, req, res, next) => {
   console.error(err.stack)

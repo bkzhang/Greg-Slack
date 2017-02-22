@@ -1,4 +1,4 @@
-module.exports = function (req, res, next) {
+module.exports = (req, res, next) => {
   let userName = req.body.user_name
   if (userName == 'slackbot') {
     return res.status(200).end
