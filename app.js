@@ -4,8 +4,8 @@ const app = require('express')()
 const bodyParser = require('body-parser')
 require('dotenv').config()
 
-const greg = require('./routes/greg')
-const roll = require('./routes/roll')
+const greg = require('./routes/webhooks/outgoing/kitty')
+const roll = require('./routes/webhooks/incoming/roll')
 
 const port = process.env.PORT || 3000
 
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   res.status(200).send('Ain\'t that just the way?')
 })
 
-app.post('/greg', greg)
+app.post('/kitty', kitty)
 
 app.post('/roll', roll)
 
